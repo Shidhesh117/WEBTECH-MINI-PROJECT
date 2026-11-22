@@ -1,0 +1,390 @@
+MIDNIGHT
+AT BMSIT
+A Cartoon Horror-Comedy Escape Adventure
+PRODUCT REQUIREMENTS DOCUMENT
+Project type: Basic Web Development Mini Project
+Platform: Responsive browser-based 2D game
+Technology: HTML5, CSS3, Vanilla JavaScript
+Optional: Canvas API, LocalStorage, HTML Audio
+Version 1.0  |  15 November 2026
+
+
+Document Information
+Item	Description
+Project name	Midnight at BMSIT
+Tagline	One Campus. One Midnight. Too Many Zombies. One Way Out.
+Institution setting	BMS Institute of Technology and Management (BMSIT), Bengaluru
+Genre	2D point-and-click escape, puzzle, light horror and comedy
+Target audience	Teenagers and college students; designed for casual browser play
+Primary users	Players using laptop/desktop or mobile browser
+Project purpose	A playable mini-project demonstrating front-end web development concepts
+Document purpose	Specify the product concept, user experience, game rules, requirements, technical plan and testing criteria.
+
+1. Executive Summary
+Midnight at BMSIT is a cartoon-style browser escape game set in a fictional, spooky version of BMSIT. The player is a student who stays late to finish a project and accidentally becomes locked inside the campus after midnight. The lights go out, doors become locked, strange sounds echo through the buildings and goofy cartoon zombies begin wandering around.
+The player must explore different campus-inspired areas, find objects, collect clues, solve puzzles, avoid zombies and environmental obstacles, restore power and unlock the main gate before the countdown ends. The game should be funny and suspenseful rather than graphic or genuinely frightening.
+The project will be built with HTML, CSS and JavaScript. A simple point-and-click structure is recommended so that the project remains achievable without Unity, Unreal Engine, a server or a database.
+2. Product Vision, Goals and Non-Goals
+2.1 Vision
+Create a small but memorable cartoon escape adventure that feels like an indie browser game and uses a familiar college setting, humorous characters, interactive scenes and puzzle-solving.
+2.2 Goals
+Create a complete beginning-to-ending game experience.
+Use a fictionalized BMSIT campus setting that feels familiar without claiming to reproduce the exact campus layout.
+Include multiple rooms, interactive objects, inventory, clues, puzzles, zombies and obstacles.
+Make controls simple enough for first-time players.
+Support desktop and mobile browser interaction.
+Demonstrate DOM manipulation, events, conditions, arrays/objects, timers, CSS animation and LocalStorage.
+2.3 Non-Goals for the First Version
+No 3D world, multiplayer networking or online accounts.
+No real-time voice chat, camera or microphone features.
+No complex enemy pathfinding or physics engine.
+No real campus security information, real room access details or exact building maps.
+No graphic violence, blood or realistic weapons.
+3. Target Audience and Player Experience
+Audience	What they want	How the game responds
+Teenagers	Fast, funny, colourful and replayable gameplay.	Short levels, comic reactions, collectibles and clear goals.
+College students	Relatable campus humour and challenges.	Classroom, library, canteen and exam-related jokes.
+Casual players	Simple controls and manageable difficulty.	Click/tap interactions, hints, pause and retry.
+
+Desired player feeling: curious at the beginning, amused by the characters, challenged by puzzles, slightly tense during zombie encounters and satisfied after escaping.
+4. Story, Setting and Tone
+4.1 Story Introduction
+The player is a BMSIT student who stays late on campus to finish a mini-project. At midnight, the power suddenly fails. The main gate is locked, the phone has no signal and the campus announcement system crackles to life: “Attention, night owl. Please proceed to the exit. And please do not feed the zombies.” The player discovers that strange cartoon zombies are roaming the campus. To escape, the student must restore power, collect two access-card fragments and solve the gate code.
+4.2 Tone and Visual Boundaries
+Use playful spooky visuals, expressive cartoon faces and exaggerated reactions.
+Zombies should be goofy, slow or silly—not realistic or graphic.
+Use harmless hiding, distraction and timing mechanics instead of combat.
+Use fictional room names and a stylized campus layout.
+Clearly present the zombie outbreak as fictional game storytelling, not a real BMSIT event.
+5. Main Gameplay Loop
+1.Enter a campus area and inspect the scene.
+2.Tap or click highlighted objects to read descriptions or discover clues.
+3.Collect useful items in the inventory.
+4.Solve the room puzzle or activate a mechanism.
+5.Avoid or distract zombies and handle environmental obstacles.
+6.Unlock the next area and continue toward the main gate.
+7.Combine the required items, enter the final code and escape.
+Core system	Purpose
+Exploration	Discover clues and interact with room objects.
+Inventory	Store keys, notes, fuses and access-card pieces.
+Puzzles	Require observation, logic, sequence memory or item use.
+Zombie AI	Create tension using patrol, alert and chase/approach states.
+Hazards	Make the player consider noise, timing and route choices.
+Timer and score	Encourage replay and faster completion.
+
+6. Level-by-Level Game Design
+Level 0 – Opening Sequence
+Scene: A cartoon title screen showing the campus at night, moonlight, a flickering lamp and a tiny zombie silhouette behind a tree.
+Display game title and tagline.
+Buttons: Play, How to Play, Sound On/Off and Credits.
+Show a short comic panel explaining why the student is still on campus.
+Start the countdown only when the player enters the first playable scene.
+Level 1 – Classroom Block
+Objective: Find the classroom key and decode a clue to unlock the corridor.
+Element	Details
+Scene objects	Teacher's desk, blackboard, school bag, cupboard, wall clock, scattered books and door.
+Items to find	Small torch, folded note and classroom key.
+Puzzle	A three-digit code is hidden in a blackboard clue. The player inspects the board and enters the code on the desk drawer.
+Zombie	Zombie Student: slowly patrols the corridor and reacts to noisy actions.
+Obstacle	Loose books: clicking or stepping near them increases the noise meter.
+Exit condition	Open the desk drawer, collect the key and unlock the corridor door.
+Comedy moment	A note says: “If found, please return this key. The attendance shortage is already serious.”
+
+Level 2 – Library
+Objective: Find a fuse and the first access-card fragment.
+Element	Details
+Scene objects	Bookshelves, reading table, librarian desk, computer, archive cabinet and wall lamp.
+Items to find	Fuse, torn campus map and access-card fragment A.
+Puzzle	Arrange three marked books in the order suggested by a note or shelf symbols.
+Zombie	Zombie Librarian: investigates sound and moves between two shelf positions.
+Obstacle	Rolling library ladder blocks the direct route; wait for it to move or use another hotspot.
+Exit condition	Solve the book-order puzzle, open the archive cabinet and collect the fuse and card fragment.
+Comedy moment	The zombie librarian makes a “Shhh!” speech bubble when the noise meter rises.
+
+Level 3 – Canteen
+Objective: Distract the zombie chef, restore part of the power system and find access-card fragment B.
+Element	Details
+Scene objects	Serving counter, tables, fridge, food tray, menu board, kitchen door and power switch.
+Items to find	Plastic tray, power switch key and access-card fragment B.
+Puzzle	Repeat a short sequence of food icons or coloured buttons shown by a clue on the menu board.
+Zombie	Zombie Chef: guards the serving counter and reacts to movement or noise.
+Obstacle	Spilled juice slows the player for a few seconds; a moving trolley periodically blocks the corridor.
+Exit condition	Use the tray as a harmless distraction, solve the sequence and activate the power switch.
+Comedy moment	The zombie chef chases the smell of an imaginary midnight dosa.
+
+Final Level – Main Corridor and Gate
+Objective: Combine the access-card fragments, enter the final code and escape.
+Element	Details
+Scene objects	Security desk, gate control panel, emergency light, locked main gate and corridor noticeboard.
+Required items	Access-card fragment A, access-card fragment B and the final code clue.
+Puzzle	Combine the card fragments, inspect the clue and enter the correct code on the gate panel.
+Zombie	Gatekeeper Zombie: patrols between the security desk and gate.
+Obstacle	A short power outage disables the gate panel until the fuse has been installed.
+Exit condition	Restore power, enter the code while the route is clear and activate the gate.
+Ending	Show the student escaping at sunrise with a humorous final message.
+
+7. Characters and Zombie Behaviour
+Character	Appearance / personality	Behaviour	How player avoids it
+Player – Student	Cartoon student with backpack, torch and expressive reactions.	Explores, collects objects and solves puzzles.	Not an enemy; controlled by player.
+Zombie Student	Messy hair, oversized uniform sweater, sleepy eyes.	Slow patrol between corridor points; investigates loud actions.	Wait, hide at a marked safe spot or use a distraction.
+Zombie Librarian	Large glasses, cardigan and floating “SHHH” bubble.	Moves between shelves; alert state lasts longer after noise.	Choose a quiet route and solve the shelf puzzle.
+Zombie Chef	Apron, chef hat and exaggerated hungry expression.	Guards the canteen counter; follows a distraction.	Use the tray or trigger the food timer.
+Gatekeeper Zombie	Security cap, oversized key ring and slow shuffle.	Patrols the final corridor during the gate sequence.	Wait for its patrol cycle, then use the panel.
+
+7.1 Simple Enemy State Model
+State	What happens	Example trigger
+Idle	Zombie waits or performs a looping animation.	No player noise nearby.
+Patrol	Zombie moves between two or three predefined points.	Normal gameplay timer.
+Alert	Zombie turns toward the source and displays an alert icon.	Player triggers a noisy object.
+Approach	Zombie moves a short distance toward the alert location.	Noise meter reaches a threshold.
+Reset	Zombie returns to patrol after a short delay.	Player hides or waits.
+
+Beginner implementation: use JavaScript timers and a small number of predefined positions. A full navigation or pathfinding algorithm is not needed.
+8. Obstacles and Hazard Rules
+Hazard	Effect on player	Rule / response
+Loose books	Raises noise and may alert the zombie student.	Avoid the book pile or accept the noise penalty.
+Slippery juice	Temporarily slows movement or delays an action.	Wait for the slip effect to end.
+Flickering lights	Some objects are hard to see.	Find and use the torch to reveal clues.
+Locked doors	Block access to a new room.	Find the matching key or solve the code.
+Power failure	Disables the final gate panel.	Find and install the fuse.
+Moving trolley	Blocks the corridor at intervals.	Wait for a safe gap before proceeding.
+Noise meter	At a high level, zombies become alert.	Avoid noisy interactions or use a safe hiding spot.
+
+Fairness rule: Hazards should warn the player before a major consequence. The game should not punish a player with an unavoidable instant failure.
+9. Puzzle Specifications and Example Solutions
+Puzzle	Clue	Player action	Example solution / result
+Classroom drawer code	Blackboard shows three simple symbols with a number clue.	Inspect board and enter three digits.	Correct code opens drawer and reveals the classroom key.
+Library book order	A note says: “Start with the oldest, then the blue cover, then the smallest.”	Select three marked books in order.	Correct order opens archive cabinet.
+Power fuse	Fuse box label shows an empty slot and a matching fuse symbol.	Select fuse from inventory, then select fuse box.	Lights and gate panel power are restored.
+Canteen sequence	Menu board shows a sequence of food icons.	Repeat the sequence using on-screen buttons.	Correct sequence opens kitchen compartment.
+Final gate code	Two card fragments and a noticeboard clue reveal the code.	Combine fragments and enter code.	Gate opens and victory sequence starts.
+
+Important: The actual numeric codes and sequence should be set in the JavaScript game data. The examples above are design guidance; the development team can choose final values and ensure that all clues lead consistently to them.
+10. Items and Inventory
+Item	Found in	Use
+Torch	Classroom	Reveals selected hidden clues in dark scenes.
+Folded note	Classroom	Provides a hint for the classroom code.
+Classroom key	Classroom drawer	Unlocks the corridor door.
+Fuse	Library archive	Restores power to the gate panel.
+Torn map	Library	Shows the route between campus areas.
+Access-card fragment A	Library archive	Combines with fragment B for gate access.
+Plastic tray	Canteen	Creates a harmless distraction for the zombie chef.
+Access-card fragment B	Canteen compartment	Completes the gate access card.
+Final code clue	Main corridor noticeboard	Helps solve the gate panel puzzle.
+
+Inventory interaction: the player taps an item to select it, then taps an object in the scene to use it. If the combination is incorrect, show a friendly message such as “That probably won't work.”
+11. Game Rules, Timer and Scoring
+11.1 Timer
+Suggested default duration: 12 minutes for the full first version.
+The timer begins when Level 1 starts, not on the title screen.
+Pause stops the timer and pauses active zombie movement.
+When time reaches zero, show the Game Over screen and offer Retry.
+Difficulty settings may change the timer: Chill 15 minutes, Standard 12 minutes, Spooky 9 minutes.
+11.2 Noise Meter
+Noise starts at zero.
+Selected actions add noise, such as knocking over books or dropping an object.
+At a warning threshold, show a visual alert and zombie reaction.
+At a high threshold, trigger a short approach/chase event.
+Noise may decrease slowly while the player remains in a safe location.
+11.3 Scoring
+Action	Suggested score
+Complete a room	+100 points
+Solve a puzzle without a hint	+50 points
+Collect an optional hidden sticker	+25 points
+Use a hint	−10 points
+Trigger a noise alert	−15 points
+Escape with time remaining	Bonus based on remaining time
+
+Final rank examples: Campus Legend, Night Owl, Almost Caught, Zombie's Favourite Student. These ranks are humorous labels, not real academic results.
+12. User Interface and Screen Details
+Screen	Required elements	Main actions
+Title screen	Game logo, night-campus illustration, tagline, Play, How to Play, Sound toggle.	Start game or view instructions.
+Story intro	Comic panels and short dialogue.	Continue to classroom.
+Gameplay screen	Scene art, player character, clickable objects, timer, noise meter, inventory and pause.	Explore, inspect and use items.
+Puzzle modal	Puzzle prompt, clue, input controls, Submit and Close.	Enter code or complete sequence.
+Pause menu	Resume, Restart, Sound and Return to Title.	Pause or restart safely.
+Level transition	Room title, objective and short character message.	Enter next room.
+Game Over	Funny failure illustration, reason and Retry button.	Restart game.
+Victory	Gate-open animation, completion time, score, rank and Play Again.	Replay or return to title.
+
+12.1 Gameplay HUD
+Top-left: current level and objective.
+Top-centre: countdown timer.
+Top-right: pause and sound controls.
+Below the timer: noise meter with clear warning states.
+Bottom area: inventory slots and selected-item indicator.
+Scene area: large clickable hotspots with visible feedback.
+12.2 Visual Style
+Design area	Recommendation
+Art style	2D cartoon / hand-drawn illustration with clean outlines.
+Main colours	Midnight navy, deep purple, muted teal, moonlight blue.
+Accent colours	Warm yellow for clues, coral for danger, mint green for success.
+Characters	Rounded shapes, expressive faces, exaggerated reactions.
+Typography	Bold playful display font for headings; highly readable sans-serif for instructions.
+Buttons	Large rounded buttons with clear hover, focus and pressed states.
+Animation	Subtle flickering lights, drifting fog, zombie shuffle, item sparkle and door movement.
+
+13. Controls and Accessibility
+Action	Desktop	Mobile
+Explore	Click scene hotspots or use optional arrow-key navigation.	Tap large scene hotspots or navigation arrows.
+Inspect	Click an object.	Tap an object.
+Use inventory item	Click item, then click target object.	Tap item, then tap target object.
+Pause	Pause button or Escape key.	Large pause button.
+Puzzle entry	Keyboard input and on-screen controls.	On-screen input and buttons.
+
+All important actions must work with a tap; do not rely only on hover.
+Use readable text, sufficient contrast and visible focus indicators.
+Provide text labels for icons and puzzle controls.
+Provide a mute control and do not autoplay loud audio.
+Respect reduced-motion preferences by limiting non-essential animations.
+Avoid flashing effects that could be uncomfortable for players.
+14. Functional Requirements
+ID	Requirement	Expected behaviour
+FR-01	Start screen	Play starts a new game; How to Play opens instructions; sound control toggles audio.
+FR-02	Scene navigation	Player can enter unlocked rooms and cannot bypass required progression.
+FR-03	Object interaction	Objects respond to click/tap with descriptions, clues or actions.
+FR-04	Inventory	Collected items appear once and can be selected and used.
+FR-05	Puzzle validation	Correct answers unlock progress; wrong answers show helpful feedback.
+FR-06	Zombie behaviour	Zombies have simple idle, patrol, alert, approach and reset states.
+FR-07	Obstacle logic	Hazards change noise, movement delay or access state according to defined rules.
+FR-08	Timer	Countdown begins during play, pauses on pause and triggers game over at zero.
+FR-09	Hints	Player can request limited hints; using a hint may reduce score.
+FR-10	Pause/restart	Player can pause, resume and restart without broken duplicate timers.
+FR-11	Win/lose states	Game displays a clear victory or game-over screen.
+FR-12	Progress saving	Best score, settings and completion status are saved locally.
+FR-13	Responsive controls	Game remains usable on desktop, tablet and mobile.
+FR-14	Audio	Music and effects can be independently muted or enabled.
+
+15. Non-Functional Requirements
+Category	Requirement
+Performance	Use lightweight images and animations; avoid unnecessary continuous computation.
+Usability	A first-time player should understand the objective and controls quickly.
+Compatibility	Test current Chrome, Edge and Firefox; test mobile Chrome and Safari where available.
+Responsive design	Reflow the scene, HUD and inventory on narrow screens without horizontal overflow.
+Reliability	Prevent duplicate item collection, duplicate timers and invalid scene transitions.
+Privacy	No login, personal information collection or external tracking is required.
+Maintainability	Keep scene definitions, puzzles, enemy behaviour and interface code separated.
+Safety of content	Use non-graphic cartoon horror and fictional campus events.
+
+16. Technology Stack and Architecture
+Technology	Use	Required?
+HTML5	Page structure, buttons, inventory, overlays and accessible controls.	Yes
+CSS3	Layouts, cartoon scene visuals, transitions and character animation.	Yes
+Vanilla JavaScript	Game state, event handling, puzzle logic, timer and zombie states.	Yes
+DOM API	Update text, inventory, clues, modals and game status.	Yes
+Canvas API	Optional drawing and free movement for a more arcade-like version.	Optional
+LocalStorage	Save high score, sound preference and unlocked progress.	Optional but recommended
+HTML Audio	Background music and sound effects.	Optional
+Vercel	Host the static website.	Recommended
+
+16.1 Suggested File Structure
+midnight-at-bmsit/
+│
+├── index.html
+├── css/
+│   ├── style.css
+│   ├── menu.css
+│   ├── game.css
+│   └── responsive.css
+│
+├── js/
+│   ├── main.js
+│   ├── gameState.js
+│   ├── scenes.js
+│   ├── interactions.js
+│   ├── inventory.js
+│   ├── puzzles.js
+│   ├── zombies.js
+│   ├── timer.js
+│   └── audio.js
+│
+├── assets/
+│   ├── backgrounds/
+│   ├── characters/
+│   ├── objects/
+│   ├── icons/
+│   └── audio/
+│
+└── README.md
+16.2 Suggested Game State
+Maintain one central JavaScript state object so that rooms, items, puzzles and enemies use consistent information. Example fields:
+currentScene: classroom / library / canteen / gate.
+inventory: list of collected item IDs.
+completedPuzzles: list of completed puzzle IDs.
+timerRemaining: remaining seconds.
+noiseLevel: current noise value.
+enemyStates: current state and position for each zombie.
+score: current points.
+isPaused and gameStatus: control the game lifecycle.
+17. Development Plan
+Phase	Work	Deliverable
+1. Planning	Finalize story, scene order, object list, puzzle answers and visual references.	Game flow and asset checklist.
+2. Basic prototype	Build title screen, one classroom scene, click interactions and one puzzle.	First playable room.
+3. Core rooms	Add library, canteen, gate, inventory and scene transitions.	Complete exploration path.
+4. Game mechanics	Add timer, noise meter, zombie states, hazards and puzzle validation.	Functional game loop.
+5. Visual polish	Add cartoon art, character animation, sounds, transitions and responsive layout.	Polished game interface.
+6. Testing	Test puzzle flow, edge cases, mobile layout, pause/restart and saving.	Stable release candidate.
+7. Deployment	Deploy static files to Vercel and verify the live build.	Published project.
+
+18. Minimum Viable Product and Stretch Features
+18.1 MVP – Must Have
+Title screen and short story introduction.
+Four areas: classroom, library, canteen and main gate.
+At least four working puzzles.
+Inventory with at least six usable items.
+At least two zombie characters with simple patrol/alert behaviour.
+At least three obstacles, including noise and locked doors.
+Timer, pause, restart, one hint and win/lose screens.
+18.2 Stretch Features – Add Only After MVP
+Three difficulty modes.
+Optional hidden collectibles and secret notes.
+Two alternate endings based on score or collected items.
+Character outfit selection.
+A local leaderboard showing best completion times on the same browser.
+Extra campus rooms such as a computer lab or auditorium.
+More zombie animations and randomised patrol timing.
+19. Test Plan and Acceptance Criteria
+Test ID	Test	Expected result
+TC-01	Click Play from title screen.	Story intro or first room opens; timer starts at the defined point.
+TC-02	Inspect an interactive object.	Description or clue appears.
+TC-03	Collect the same item twice.	Inventory contains only one copy.
+TC-04	Enter an incorrect puzzle answer.	Helpful error message appears; game remains playable.
+TC-05	Enter a correct puzzle answer.	The correct drawer, door or mechanism unlocks.
+TC-06	Trigger a noisy obstacle.	Noise meter increases and nearby zombie reacts.
+TC-07	Pause during gameplay.	Timer and enemy movement stop.
+TC-08	Resume after pause.	Timer and enemy movement continue without duplicate loops.
+TC-09	Allow timer to reach zero.	Game-over screen appears and Retry works.
+TC-10	Complete all objectives and enter gate code.	Victory screen appears with score and completion time.
+TC-11	Reload after saving a best score.	Saved score or settings are restored.
+TC-12	Play at mobile width.	Controls remain visible and usable without horizontal page overflow.
+
+19.1 Release Acceptance Checklist
+A player can start, play, win and restart the game.
+All visible buttons and interactive hotspots work.
+No required item can become permanently inaccessible due to an accidental click.
+Every puzzle has a discoverable clue and a valid solution.
+Zombie and obstacle rules are understandable and fair.
+The game is usable on desktop and mobile.
+The final deployment loads all assets and scripts correctly.
+20. Risks and Mitigation
+Risk	Mitigation
+Project becomes too large	Finish one room end-to-end before adding optional content.
+Zombie logic becomes complex	Use fixed patrol points and a small finite-state model.
+Artwork takes too long	Use a consistent original 2D illustration style and reuse background elements.
+Puzzle progression breaks	Use named item and puzzle IDs and test each unlock condition.
+Mobile layout is difficult	Use tap hotspots, large buttons and simplified scene composition.
+Game feels too scary or childish	Use goofy character design, humour and non-graphic suspense.
+Campus representation is inaccurate	Use a fictionalized campus-inspired layout and avoid claiming exact mapping.
+
+21. Deployment and Maintenance
+8.Keep index.html at the project root and use relative paths for CSS, JavaScript and assets.
+9.Test the project locally in a browser before deployment.
+10.Push the project to a Git repository.
+11.Import the repository into Vercel as a static front-end project.
+12.Verify that the title screen, all scenes, audio files and images load in the deployed version.
+13.Test the deployed link on both a laptop and a mobile phone.
+No server-side code or database is needed for the initial release. LocalStorage is sufficient for saving basic progress on the player's browser.
+22. Final Project Description
+Midnight at BMSIT is a 2D cartoon horror-comedy escape game developed using HTML, CSS and JavaScript. Set in a fictionalized version of BMSIT after midnight, the game challenges a student to explore campus areas, collect objects, solve puzzles, avoid goofy cartoon zombies and overcome environmental obstacles. The player must restore power, assemble access-card fragments and unlock the main gate before time runs out. The project demonstrates front-end programming, interactive UI design, game-state management, event handling, timers, animations, responsive design and browser-based data storage.
+23. Short Abstract for Project Submission
+Midnight at BMSIT is a browser-based 2D escape adventure designed as a basic web development project. The game places the player in a fictional cartoon version of BMSIT after midnight, where they must escape from a locked campus while avoiding cartoon zombies and environmental obstacles. Players explore different locations, collect items, solve interactive puzzles and unlock routes to the main gate. The system is developed using HTML5, CSS3 and JavaScript, with optional use of the Canvas API and LocalStorage. The project combines entertainment with practical implementation of front-end web technologies, interactive event handling, animations, timers and game-state management.
